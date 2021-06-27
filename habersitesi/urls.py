@@ -1,4 +1,4 @@
-"""habersitesi URL Configuration
+"""hibernates URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.2/topics/http/urls/
@@ -9,18 +9,18 @@ Function views
 Class-based views
     1. Add an import:  from other_app.views import Home
     2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
+Including another URConf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib.auth import admin
+
 from django.urls import include, path
 from django.contrib import admin
 
 
-urlpatterns = {
+urlpatterns = (
     path('', include('home.urls')),
     path('home/', include('home.urls')),
     path('news/', include('news.urls')),
     path('admin/', admin.site.urls),
-}
+)
