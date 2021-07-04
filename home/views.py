@@ -3,7 +3,10 @@ from django.shortcuts import render
 
 
 # Create your views here.
+from home.models import Setting
+
+
 def index(request):
-    text = "Django Kurulumu : Python -m pip install <br> Proje Oluşturma :Django-admin startproject mysite <br> App ekleme : Python manage.py starapp polls"
-    context = {'text': text}
+    setting = Setting.objects.get(pk=1)
+    context = {'setting': setting}
     return render(request, 'index.html', context)
